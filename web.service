@@ -1,0 +1,12 @@
+[Unit]
+Description=Simple web server
+After=network.target
+
+[Service]
+User=webuser
+WorkingDirectory=/srv/web
+ExecStart=/usr/bin/python3 -m http.server 8080
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
